@@ -13,7 +13,7 @@ namespace FileReservationSystem
         //用于连接Oracle数据库
         static private OracleConnection conn;
         //连接字符串
-        static private string connStr = Globalconst.connStr;
+        static private string connStr = Globalconst.CONN_STR;
         //用于执行SQL语句
         static private OracleCommand cmd;
 

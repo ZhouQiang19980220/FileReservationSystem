@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace FileReservationSystem
 {
-    public partial class main : Form
+    public partial class loginForm : Form
     {
-        public main()
+        public loginForm()
         {
             InitializeComponent();
         }
@@ -28,6 +28,9 @@ namespace FileReservationSystem
                 MessageBox.Show("数据库连接失败，原因如下：" + ex.Message, "提示");
                 Application.Exit();
             }
+
+            Win32Utility.SetCueText(textBox_user, Globalconst.PLEASE_INPUT_USERNAME);
+            Win32Utility.SetCueText(textBox_password, Globalconst.PLEASE_INPUT_PASSWORD);
         }
     }
 }
