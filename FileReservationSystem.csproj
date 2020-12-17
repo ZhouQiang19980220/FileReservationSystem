@@ -49,6 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="applyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="applyForm.Designer.cs">
+      <DependentUpon>applyForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="CADOConn.cs" />
     <Compile Include="Globalconst.cs" />
     <Compile Include="loginForm.cs">
@@ -66,6 +72,9 @@
       <DependentUpon>userForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Win32Utility.cs" />
+    <EmbeddedResource Include="applyForm.resx">
+      <DependentUpon>applyForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="loginForm.resx">
       <DependentUpon>loginForm.cs</DependentUpon>
     </EmbeddedResource>

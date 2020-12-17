@@ -16,7 +16,7 @@ namespace FileReservationSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new userForm());
+            Application.Run(new applyForm());
         }
     }
 }
