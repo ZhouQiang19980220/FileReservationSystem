@@ -49,6 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="administratorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="administratorForm.Designer.cs">
+      <DependentUpon>administratorForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="applyForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +84,9 @@
       <DependentUpon>userForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Win32Utility.cs" />
+    <EmbeddedResource Include="administratorForm.resx">
+      <DependentUpon>administratorForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="applyForm.resx">
       <DependentUpon>applyForm.cs</DependentUpon>
     </EmbeddedResource>
