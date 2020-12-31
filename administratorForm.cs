@@ -41,6 +41,12 @@ namespace FileReservationSystem
         //维护状态：确定档案是已经借出去了
         private void button_lend_Click(object sender, EventArgs e)
         {
+
+            if(dataGridView_admin.CurrentRow == null)
+            {
+                MessageBox.Show("什么都没选中！");
+                return;
+            }
             int select_index = dataGridView_admin.CurrentRow.Index;
             string appid = dataGridView_admin.Rows[select_index].Cells[0].Value.ToString();
             string objNameCode = dataGridView_admin.Rows[select_index].Cells[2].Value.ToString();

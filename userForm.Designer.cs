@@ -63,7 +63,7 @@ namespace FileReservationSystem
             this.dataGridView_application.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridView_application.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_application.Location = new System.Drawing.Point(32, 63);
-            this.dataGridView_application.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView_application.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView_application.MultiSelect = false;
             this.dataGridView_application.Name = "dataGridView_application";
             this.dataGridView_application.ReadOnly = true;
@@ -77,7 +77,7 @@ namespace FileReservationSystem
             // button_delete
             // 
             this.button_delete.Location = new System.Drawing.Point(2, 2);
-            this.button_delete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button_delete.Margin = new System.Windows.Forms.Padding(2);
             this.button_delete.Name = "button_delete";
             this.button_delete.Size = new System.Drawing.Size(112, 26);
             this.button_delete.TabIndex = 2;
@@ -88,7 +88,7 @@ namespace FileReservationSystem
             // button_application
             // 
             this.button_application.Location = new System.Drawing.Point(166, 2);
-            this.button_application.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button_application.Margin = new System.Windows.Forms.Padding(2);
             this.button_application.Name = "button_application";
             this.button_application.Size = new System.Drawing.Size(112, 26);
             this.button_application.TabIndex = 3;
@@ -98,8 +98,8 @@ namespace FileReservationSystem
             // 
             // button_lookAuthorizeApp
             // 
-            this.button_lookAuthorizeApp.Location = new System.Drawing.Point(494, 2);
-            this.button_lookAuthorizeApp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button_lookAuthorizeApp.Location = new System.Drawing.Point(330, 2);
+            this.button_lookAuthorizeApp.Margin = new System.Windows.Forms.Padding(2);
             this.button_lookAuthorizeApp.Name = "button_lookAuthorizeApp";
             this.button_lookAuthorizeApp.Size = new System.Drawing.Size(112, 26);
             this.button_lookAuthorizeApp.TabIndex = 4;
@@ -109,8 +109,8 @@ namespace FileReservationSystem
             // 
             // button_exit
             // 
-            this.button_exit.Location = new System.Drawing.Point(330, 2);
-            this.button_exit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button_exit.Location = new System.Drawing.Point(494, 2);
+            this.button_exit.Margin = new System.Windows.Forms.Padding(2);
             this.button_exit.Name = "button_exit";
             this.button_exit.Size = new System.Drawing.Size(112, 26);
             this.button_exit.TabIndex = 5;
@@ -130,10 +130,10 @@ namespace FileReservationSystem
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.Controls.Add(this.button_delete, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.button_application, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.button_lookAuthorizeApp, 3, 0);
-            this.tableLayoutPanel1.Controls.Add(this.button_exit, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.button_lookAuthorizeApp, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.button_exit, 3, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(32, 244);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -148,7 +148,7 @@ namespace FileReservationSystem
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.dataGridView_application);
             this.Controls.Add(this.label_application);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "userForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "用户界面";

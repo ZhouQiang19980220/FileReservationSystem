@@ -64,6 +64,11 @@ namespace FileReservationSystem
         //同意
         private void button_agree_Click(object sender, EventArgs e)
         {
+            if(dataGridView_authorize.CurrentRow == null)
+            {
+                MessageBox.Show("什么都没选中！");
+                return;
+            }
             int selectedRowIndex = dataGridView_authorize.CurrentRow.Index;
             string appId = dataGridView_authorize.Rows[selectedRowIndex].Cells[0].Value.ToString();
             string appStatus = dataGridView_authorize.Rows[selectedRowIndex].Cells[4].Value.ToString();
@@ -83,6 +88,11 @@ namespace FileReservationSystem
 
         private void button_disagree_Click(object sender, EventArgs e)
         {
+            if(dataGridView_authorize.CurrentRow == null)
+            {
+                MessageBox.Show("什么都没选中！");
+                return;
+            }
             int selectedRowIndex = dataGridView_authorize.CurrentRow.Index;
             string appId = dataGridView_authorize.Rows[selectedRowIndex].Cells[0].Value.ToString();
             string appStatus = dataGridView_authorize.Rows[selectedRowIndex].Cells[4].Value.ToString();
