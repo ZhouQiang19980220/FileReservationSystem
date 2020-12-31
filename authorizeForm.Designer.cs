@@ -60,7 +60,7 @@ namespace FileReservationSystem
             // 
             // dataGridView_authorize
             // 
-            this.dataGridView_authorize.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dataGridView_authorize.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView_authorize.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
             this.dataGridView_authorize.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridView_authorize.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -71,7 +71,7 @@ namespace FileReservationSystem
             this.dataGridView_authorize.RowHeadersWidth = 51;
             this.dataGridView_authorize.RowTemplate.Height = 27;
             this.dataGridView_authorize.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView_authorize.Size = new System.Drawing.Size(629, 223);
+            this.dataGridView_authorize.Size = new System.Drawing.Size(650, 225);
             this.dataGridView_authorize.StandardTab = true;
             this.dataGridView_authorize.TabIndex = 3;
             // 
@@ -90,7 +90,7 @@ namespace FileReservationSystem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(649, 301);
+            this.ClientSize = new System.Drawing.Size(670, 301);
             this.Controls.Add(this.button_onlyShowPending);
             this.Controls.Add(this.dataGridView_authorize);
             this.Controls.Add(this.button_disagree);

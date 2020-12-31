@@ -87,7 +87,8 @@ namespace FileReservationSystem
                                                                       " doc2.stu_name || '(' || app.objcode || ')'   被借阅人," +
                                                                       " doc3.stu_name || '(' || app.authcode || ')'   院系管理员," +
                                                                       " app.appstatus 处理状态，" +
-                                                                      " app.time 预约时间" +
+                                                                      " app.time 预约时间," +
+                                                                      " doc2.position 档案位置" +
                                                                       " from t_application app, t_document doc1, t_document doc2, t_document doc3" +
                                                                       " where app.teecode = doc1.document_code" +
                                                                       " and app.objcode = doc2.document_code" +

@@ -53,6 +53,11 @@ namespace FileReservationSystem
         {
             if (MessageBox.Show("您确定要删除本条记录？", "警告！", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
             {
+                if(dataGridView_application.CurrentRow == null)
+                {
+                    MessageBox.Show("什么都没选中！");
+                    return;
+                }
                 int selectedRowIndex = dataGridView_application.CurrentRow.Index;
                 string appId = dataGridView_application.Rows[selectedRowIndex].Cells[0].Value.ToString();
                 string sqlStr = string.Format(Globalconst.DELETE_APPLICATION, appId);
