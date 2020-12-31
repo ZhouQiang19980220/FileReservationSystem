@@ -41,26 +41,32 @@ namespace FileReservationSystem
             // 
             // textBox_user
             // 
-            this.textBox_user.Location = new System.Drawing.Point(160, 47);
+            this.textBox_user.Location = new System.Drawing.Point(160, 48);
+            this.textBox_user.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox_user.Name = "textBox_user";
             this.textBox_user.Size = new System.Drawing.Size(199, 25);
             this.textBox_user.TabIndex = 0;
+            this.textBox_user.Text = "20200001";
             // 
             // textBox_password
             // 
             this.textBox_password.Location = new System.Drawing.Point(160, 104);
+            this.textBox_password.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox_password.Name = "textBox_password";
             this.textBox_password.PasswordChar = '*';
             this.textBox_password.Size = new System.Drawing.Size(199, 25);
             this.textBox_password.TabIndex = 1;
+            this.textBox_password.Text = "S20200001";
             // 
             // comboBox_userType
             // 
             this.comboBox_userType.FormattingEnabled = true;
             this.comboBox_userType.Items.AddRange(new object[] {
-            "管理员",
-            "普通用户"});
+            "普通用户",
+            "院系管理员",
+            "档案管理员"});
             this.comboBox_userType.Location = new System.Drawing.Point(160, 158);
+            this.comboBox_userType.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox_userType.Name = "comboBox_userType";
             this.comboBox_userType.Size = new System.Drawing.Size(199, 23);
             this.comboBox_userType.TabIndex = 2;
@@ -69,25 +75,29 @@ namespace FileReservationSystem
             // button_login
             // 
             this.button_login.Location = new System.Drawing.Point(160, 202);
+            this.button_login.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button_login.Name = "button_login";
-            this.button_login.Size = new System.Drawing.Size(78, 33);
+            this.button_login.Size = new System.Drawing.Size(77, 32);
             this.button_login.TabIndex = 3;
             this.button_login.Text = "登陆";
             this.button_login.UseVisualStyleBackColor = true;
+            this.button_login.Click += new System.EventHandler(this.button_login_Click);
             // 
             // button_cansel
             // 
             this.button_cansel.Location = new System.Drawing.Point(281, 202);
+            this.button_cansel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button_cansel.Name = "button_cansel";
-            this.button_cansel.Size = new System.Drawing.Size(78, 33);
+            this.button_cansel.Size = new System.Drawing.Size(77, 32);
             this.button_cansel.TabIndex = 0;
             this.button_cansel.Text = "退出";
             this.button_cansel.UseVisualStyleBackColor = true;
+            this.button_cansel.Click += new System.EventHandler(this.button_cansel_Click);
             // 
             // label_user
             // 
             this.label_user.AutoSize = true;
-            this.label_user.Location = new System.Drawing.Point(82, 50);
+            this.label_user.Location = new System.Drawing.Point(83, 50);
             this.label_user.Name = "label_user";
             this.label_user.Size = new System.Drawing.Size(52, 15);
             this.label_user.TabIndex = 4;
@@ -96,7 +106,7 @@ namespace FileReservationSystem
             // label_password
             // 
             this.label_password.AutoSize = true;
-            this.label_password.Location = new System.Drawing.Point(82, 107);
+            this.label_password.Location = new System.Drawing.Point(83, 108);
             this.label_password.Name = "label_password";
             this.label_password.Size = new System.Drawing.Size(53, 15);
             this.label_password.TabIndex = 5;
@@ -105,7 +115,7 @@ namespace FileReservationSystem
             // label_userType
             // 
             this.label_userType.AutoSize = true;
-            this.label_userType.Location = new System.Drawing.Point(82, 161);
+            this.label_userType.Location = new System.Drawing.Point(83, 161);
             this.label_userType.Name = "label_userType";
             this.label_userType.Size = new System.Drawing.Size(53, 15);
             this.label_userType.TabIndex = 6;
@@ -124,6 +134,7 @@ namespace FileReservationSystem
             this.Controls.Add(this.comboBox_userType);
             this.Controls.Add(this.textBox_password);
             this.Controls.Add(this.textBox_user);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "loginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "登陆界面";

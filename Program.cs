@@ -8,6 +8,7 @@ namespace FileReservationSystem
 {
     static class Program
     {
+        public static User curUser = new User();
         /// <summary>
         /// 应用程序的主入口点。
         /// </summary>
@@ -16,7 +17,7 @@ namespace FileReservationSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new applyForm());
+            Application.Run(new loginForm());
         }
     }
 }

@@ -55,6 +55,7 @@
     <Compile Include="administratorForm.Designer.cs">
       <DependentUpon>administratorForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="t_Application.cs" />
     <Compile Include="applyForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +78,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="User.cs" />
     <Compile Include="userForm.cs">
       <SubType>Form</SubType>
     </Compile>

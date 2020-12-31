@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Oracle.ManagedDataAccess.Client;
 using System.Data;
+using System.Windows.Forms;
+
 
 namespace FileReservationSystem
 {   //本类用来封装数据库底层接口
@@ -18,7 +20,7 @@ namespace FileReservationSystem
         static private OracleCommand cmd;
 
         //构造函数
-        CADOConn()
+        public CADOConn()
         {
             conn = new OracleConnection(connStr);
         }
@@ -46,19 +48,21 @@ namespace FileReservationSystem
         }
 
         //用于执行查询语句
-        public static OracleDataReader GetDataReader(string sql)
+        public static DataSet GetDataSet(string sql)
         {
             try
             {
                 openConn();
-                OracleDataReader dr = null;
                 //定义OracleCommand对象，用来执行SQL语句
                 cmd = conn.CreateCommand();
                 cmd.CommandText = sql;
                 //执行
-                dr = cmd.ExecuteReader();
+                OracleDataAdapter oracleDataAdapter = new OracleDataAdapter(sql, conn);
+                DataSet ds = new DataSet();
+                oracleDataAdapter.Fill(ds);
+
                 conn.Close();
-                return dr;
+                return ds;
             }
             catch(Exception e)
             {
@@ -74,13 +78,21 @@ namespace FileReservationSystem
                 openConn();
                 cmd = conn.CreateCommand();
                 cmd.CommandText = sql;
-                cmd.ExecuteNonQuery();
+                int result = cmd.ExecuteNonQuery();
                 conn.Close();
-                return true;
+                if(result == -1)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
             catch(Exception e)
             {
-                throw e;
+                MessageBox.Show(e.Message);
+                return false;
             }
         }
     }
