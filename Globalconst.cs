@@ -27,6 +27,10 @@ namespace FileReservationSystem
         public const string ON_SHELF = "0";
         public const string NOT_ON_SHELF = "1";
 
+        //事件类型
+        public const string LEND = "0";
+        public const string RETURN = "1";
+
 
         //SQL查询语句
         //查询用户表
@@ -50,6 +54,9 @@ namespace FileReservationSystem
 
         //根据档案号查姓名
         public const string SELECT_DOCUMENT = "select stu_name from t_document where document_code = '{0}'";
+
+        //根据档案号查在架状态
+        public const string SELECT_DOCUMENT_STATUS = "select status from t_document where document_code = '{0}'";
 
         //插入新增的申请
         public const string INSERT_APPLICATION = "INSERT INTO T_APPLICATION(APPID, TEECODE, OBJCODE, AUTHCODE, APPSTATUS, TIME) " + 
@@ -113,6 +120,12 @@ namespace FileReservationSystem
         public const string SELECT_MAX_APPID = "select max(appid)" +
                                                " from t_application app" +
                                                " where  substr(app.appid,0,8) = '{0}'";
+
+        //在事件表中插入
+        public const string INSERT_EVENT = "INSERT INTO T_EVENT(EVENTNO, EVENT_TYPE, OBJCODE, APPID, EVTAID, EDATE)  " +
+                                           "VALUES(SEQ_EVENT.NEXTVAL,    {0},        '{1}',   '{2}', '{3}',  TO_DATE('{4}', 'YYYYMMDD'))";
+
+        //在时间
 
     }
 }

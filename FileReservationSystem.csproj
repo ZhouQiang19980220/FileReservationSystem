@@ -55,6 +55,12 @@
     <Compile Include="administratorForm.Designer.cs">
       <DependentUpon>administratorForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReturnDocForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReturnDocForm.Designer.cs">
+      <DependentUpon>ReturnDocForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="t_Application.cs" />
     <Compile Include="applyForm.cs">
       <SubType>Form</SubType>
@@ -107,6 +113,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ReturnDocForm.resx">
+      <DependentUpon>ReturnDocForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="userForm.resx">
       <DependentUpon>userForm.cs</DependentUpon>
     </EmbeddedResource>

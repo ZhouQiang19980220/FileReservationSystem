@@ -34,6 +34,7 @@ namespace FileReservationSystem
             this.button_exit = new System.Windows.Forms.Button();
             this.button_query = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.button_return = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_admin)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,7 +55,7 @@ namespace FileReservationSystem
             // 
             // button_lend
             // 
-            this.button_lend.Location = new System.Drawing.Point(84, 285);
+            this.button_lend.Location = new System.Drawing.Point(11, 285);
             this.button_lend.Margin = new System.Windows.Forms.Padding(2);
             this.button_lend.Name = "button_lend";
             this.button_lend.Size = new System.Drawing.Size(82, 33);
@@ -65,7 +66,7 @@ namespace FileReservationSystem
             // 
             // button_exit
             // 
-            this.button_exit.Location = new System.Drawing.Point(406, 285);
+            this.button_exit.Location = new System.Drawing.Point(533, 285);
             this.button_exit.Margin = new System.Windows.Forms.Padding(2);
             this.button_exit.Name = "button_exit";
             this.button_exit.Size = new System.Drawing.Size(56, 33);
@@ -76,13 +77,14 @@ namespace FileReservationSystem
             // 
             // button_query
             // 
-            this.button_query.Location = new System.Drawing.Point(248, 285);
+            this.button_query.Location = new System.Drawing.Point(159, 285);
             this.button_query.Margin = new System.Windows.Forms.Padding(2);
             this.button_query.Name = "button_query";
             this.button_query.Size = new System.Drawing.Size(102, 33);
             this.button_query.TabIndex = 3;
             this.button_query.Text = "查询预约记录";
             this.button_query.UseVisualStyleBackColor = true;
+            this.button_query.Click += new System.EventHandler(this.button_query_Click);
             // 
             // button1
             // 
@@ -94,11 +96,23 @@ namespace FileReservationSystem
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // button_return
+            // 
+            this.button_return.Location = new System.Drawing.Point(383, 285);
+            this.button_return.Margin = new System.Windows.Forms.Padding(2);
+            this.button_return.Name = "button_return";
+            this.button_return.Size = new System.Drawing.Size(56, 33);
+            this.button_return.TabIndex = 5;
+            this.button_return.Text = "归档";
+            this.button_return.UseVisualStyleBackColor = true;
+            this.button_return.Click += new System.EventHandler(this.button_return_Click);
+            // 
             // administratorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(667, 354);
+            this.Controls.Add(this.button_return);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button_query);
             this.Controls.Add(this.button_exit);
@@ -121,5 +135,6 @@ namespace FileReservationSystem
         private System.Windows.Forms.Button button_exit;
         private System.Windows.Forms.Button button_query;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button_return;
     }
 }

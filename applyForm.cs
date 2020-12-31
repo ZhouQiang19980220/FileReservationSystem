@@ -45,6 +45,7 @@ namespace FileReservationSystem
             if(ds.Tables[0].Rows.Count == 0)
             {
                 MessageBox.Show("查无此人，请检查档案号是否正确！");
+                return;
             }
             if(!string.Equals(ds.Tables[0].Rows[0][0].ToString(), textBox_objname.Text))
             {

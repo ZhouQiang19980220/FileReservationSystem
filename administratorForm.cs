@@ -62,6 +62,11 @@ namespace FileReservationSystem
             sqlStr = string.Format(Globalconst.UPDATE_APPLICATION, Globalconst.SUCCESS, appid);
             CADOConn.ExecuteSQL(sqlStr);
 
+            //生成事件记录
+            string data = System.DateTime.Now.Date.ToString("yyyyMMdd");
+            sqlStr = string.Format(Globalconst.INSERT_EVENT, Globalconst.LEND, objCode, appid, Program.curUser.UserName, data);
+            CADOConn.ExecuteSQL(sqlStr);
+
             MessageBox.Show("存档成功!");
 
             loadData();
@@ -74,6 +79,17 @@ namespace FileReservationSystem
             {
                 this.Close();
             }
+        }
+
+        private void button_query_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_return_Click(object sender, EventArgs e)
+        {
+            ReturnDocForm rdf = new ReturnDocForm();
+            rdf.ShowDialog();
         }
     }
 }
