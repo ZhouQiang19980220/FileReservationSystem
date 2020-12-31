@@ -42,7 +42,8 @@ namespace FileReservationSystem
                                                  " where app.teecode = '{0}'" +
                                                  " and app.teecode = doc1.document_code" +
                                                  " and app.objcode = doc2.document_code" +
-                                                 " and app.authcode = doc3.document_code";
+                                                 " and app.authcode = doc3.document_code" +
+                                                 " order by app.appid desc";
 
         //删除某条预约记录
         public const string DELETE_APPLICATION = "delete from t_application where appid = '{0}'";
@@ -98,5 +99,19 @@ namespace FileReservationSystem
 
         //管理员更新档案状态
         public const string UPDATE_DOCUMENT = "update t_document set status = '{0}' where document_code = '{1}'";
+
+        //用户查询自己对应的管理员是谁
+        public const string SELECT_CAN_AUTHO = "SELECT DOC1.DOCUMENT_CODE" +
+                                               " FROM   T_DOCUMENT DOC1, T_DOCUMENT DOC2, T_USER" +
+                                               " WHERE  DOC2.MAJORNO = DOC1.MAJORNO" +
+                                               " AND    DOC1.DOCUMENT_CODE = T_USER.IDCODE" +
+                                               " AND    T_USER.USERTYPE = 1" +
+                                               " AND DOC2.DOCUMENT_CODE = '{0}'";
+
+        //查询最大的预约号
+        public const string SELECT_MAX_APPID = "select max(appid)" +
+                                               " from t_application app" +
+                                               " where  substr(app.appid,0,8) = '{0}'";
+
     }
 }
