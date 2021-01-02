@@ -1,0 +1,171 @@
+/*删除所有表*/
+DROP TABLE T_EVENT;
+DROP TABLE T_APPLICATION;
+DROP TABLE T_USER;
+DROP TABLE T_DOCUMENT;
+DROP SEQUENCE SEQ_EVENT;
+
+/*新建所有表*/
+CREATE TABLE T_DOCUMENT (                                      -- 档案表
+    DOCUMENT_CODE         varchar2(11)                 NOT NULL,     --档案号
+    STU_NAME         varchar2(8)                  NOT NULL,     --姓名
+    MAJORNO      varchar2(4)                  NOT NULL,     --所在院系
+    POSITION     varchar2(6)                  NOT NULL,     --在架位置
+    STATUS       number(1)   default  0       NOT NULL,     --状态
+    CONSTRAINT DCPK PRIMARY KEY (DOCUMENT_CODE)
+);
+
+CREATE TABLE T_USER (                                       -- 用户名表
+    USERID       number(8)                              NOT NULL,     --用户ID
+    PW           varchar2(20)                           NOT NULL,     --密码
+    IDCODE       varchar2(11)                           NOT NULL,     --档案号
+    usertype     number(1)     default  0               NOT NULL,     --用户类型：普通用户（0） 院系管理员（1） 档案管理员
+    CONSTRAINT  USERPK  PRIMARY KEY (USERID),
+    /*用户档案号是来源于档案表的外键*/
+    CONSTRAINT  USERFK1  FOREIGN KEY (IDCODE) REFERENCES T_DOCUMENT(DOCUMENT_CODE)
+);
+
+CREATE TABLE T_APPLICATION (                                  -- 预约表
+    APPID        varchar2(12)                      NOT NULL,     -- 预约号
+    TEECODE      varchar2(11)                      NOT NULL,     -- 申请人档案号
+    OBJCODE      varchar2(11)                      NOT NULL,     -- 待借阅档案号
+    AUTHCODE     varchar2(11)                      NOT NULL,     -- 授权人档案号
+    APPSTATUS    varchar2(10)                      NOT NULL,     -- 处理状态 待处理，已经同意授权，退回，档案已经就绪，档案被借走
+    TIME         date                              NOT NULL,     -- 借阅日期
+    CONSTRAINT  APPPK  PRIMARY KEY (APPID),
+     /*申请人档案号是来源于档案表的外键*/
+    CONSTRAINT  APPFK1  FOREIGN KEY (TEECODE) REFERENCES T_DOCUMENT(DOCUMENT_CODE),
+     /*待借阅档案号是来源于档案表的外键*/
+    CONSTRAINT  APPFK2  FOREIGN KEY (OBJCODE) REFERENCES T_DOCUMENT(DOCUMENT_CODE), 
+     /*用户档案号是来源于档案表的外键*/
+    CONSTRAINT  APPFK3  FOREIGN KEY (AUTHCODE) REFERENCES T_DOCUMENT(DOCUMENT_CODE)
+);
+
+CREATE TABLE T_EVENT  (                                      -- 事件表
+    EVENTNO      varchar2(16)                 NOT NULL,     --事件号
+    EVENT_TYPE         number(1)                    NOT NULL,     --事件类型
+    OBJCODE      varchar2(11)                 NOT NULL,     --档案编号
+    APPID        varchar2(12)                 NULL,     --预约号
+    EVTAID       number(8)                    NOT NULL,     --经办管理员
+    EDATE        date                         NOT NULL,     --日期
+    CONSTRAINT EVTPK PRIMARY KEY (EVENTNO),
+    /* 外键OBJCODE */
+    CONSTRAINT EVTFK1 FOREIGN KEY (OBJCODE) REFERENCES T_DOCUMENT(DOCUMENT_CODE),
+    /* 外键APPID */
+    CONSTRAINT EVTFK2 FOREIGN KEY (APPID) REFERENCES T_APPLICATION(APPID),
+    /* 外键EVTAID */
+    CONSTRAINT EVTFK3 FOREIGN KEY (EVTAID) REFERENCES T_USER(USERID)
+);
+
+--序列：用作事件表的主键
+CREATE SEQUENCE seq_event
+     INCREMENT BY 1   -- 每次加几个  
+     START WITH 1     -- 从1开始计数  
+     NOMAXVALUE       -- 不设置最大值  
+     NOCYCLE          -- 一直累加，不循环  
+     CACHE 10; 
+
+
+/*插入数据*/
+/*档案表*/
+/*普通用户*/
+INSERT INTO T_DOCUMENT(DOCUMENT_CODE, STU_NAME, MAJORNO, POSITION, STATUS)
+VALUES ('2017010001', '周强', 'DA', 'A2K4', 0);
+
+INSERT INTO T_DOCUMENT(DOCUMENT_CODE, STU_NAME, MAJORNO, POSITION, STATUS)
+values ('2017010002', '浦木宏','DA', 'A2K5', 0);
+
+INSERT INTO T_DOCUMENT(DOCUMENT_CODE, STU_NAME, MAJORNO, POSITION, STATUS)
+values ('2017010003', '林有德', 'DA','A2K16', 0);
+
+INSERT INTO T_DOCUMENT(DOCUMENT_CODE, STU_NAME, MAJORNO, POSITION, STATUS)
+values ('2017010004', '尤娜', 'DA','A3K1', 0);
+
+INSERT INTO T_DOCUMENT(DOCUMENT_CODE, STU_NAME, MAJORNO, POSITION, STATUS)
+values ('2017020001', '克劳德', 'CS','A3K5', 0);
+
+INSERT INTO T_DOCUMENT(DOCUMENT_CODE, STU_NAME, MAJORNO, POSITION, STATUS)
+values ('2017020002', '雷霆', 'CS','A3K191', 0);
+
+INSERT INTO T_DOCUMENT(DOCUMENT_CODE, STU_NAME, MAJORNO, POSITION, STATUS)
+values ('2017020003', '欧米伽','CS', 'A3K13', 0);
+
+INSERT INTO T_DOCUMENT(DOCUMENT_CODE, STU_NAME, MAJORNO, POSITION, STATUS)
+values ('2017020004', '奥巴马','CS', 'A3K8', 0);
+
+/*院系管理员*/
+INSERT INTO T_DOCUMENT(DOCUMENT_CODE, STU_NAME, MAJORNO, POSITION, STATUS)
+values ('2007030001', '马天舒','DA', 'A3K4', 0);
+
+INSERT INTO T_DOCUMENT(DOCUMENT_CODE, STU_NAME, MAJORNO, POSITION, STATUS)
+values ('2007030002', '马地舒','CS', 'A3K9', 0);
+
+/*档案管理员*/
+INSERT INTO T_DOCUMENT(DOCUMENT_CODE, STU_NAME, MAJORNO, POSITION, STATUS)
+values ('2007040001', '管理员','DAG', 'A3K2', 0);
+
+select * from t_document;
+
+/*用户名表*/
+/*普通用户*/
+INSERT INTO T_USER(USERID, PW, IDCODE, usertype)
+VALUES ('20200001', 'S20200001', '2017010001', 0);
+
+INSERT INTO T_USER(USERID, PW, IDCODE, usertype)
+VALUES ('20200002', 'S20200002', '2017010002', 0);
+
+INSERT INTO T_USER(USERID, PW, IDCODE, usertype)
+VALUES ('20200003', 'S20200003', '2017010003', 0);
+
+INSERT INTO T_USER(USERID, PW, IDCODE, usertype)
+VALUES ('20200004', 'S20200004', '2017010004', 0);
+
+INSERT INTO T_USER(USERID, PW, IDCODE, usertype)
+VALUES ('20200005', 'S20200005', '2017020001', 0);
+
+INSERT INTO T_USER(USERID, PW, IDCODE, usertype)
+VALUES ('20200006', 'S20200006', '2017020002', 0);
+
+INSERT INTO T_USER(USERID, PW, IDCODE, usertype)
+VALUES ('20200007', 'S20200007', '2017020003', 0);
+
+INSERT INTO T_USER(USERID, PW, IDCODE, usertype)
+VALUES ('20200008', 'S20200008', '2017020004', 0);
+
+/*院系管理员*/
+INSERT INTO T_USER(USERID, PW, IDCODE, usertype)
+VALUES ('20200009', 'S20200009', '2007030001', 1);
+
+INSERT INTO T_USER(USERID, PW, IDCODE, usertype)
+VALUES ('20200010', 'S20200010', '2007030002', 1);
+
+/*档案管理员*/
+INSERT INTO T_USER(USERID, PW, IDCODE, usertype)
+VALUES ('20200011', 'S20200011', '2007040001', 2);
+
+select * from t_user;
+
+
+/*预约表*/
+INSERT INTO T_APPLICATION(APPID, TEECODE, OBJCODE, AUTHCODE, APPSTATUS, TIME)
+VALUES ('202012200001', '2017010001', '2017010002', '2007030001', '待处理', TO_DATE('20201220', 'YYYYMMDD'));
+
+INSERT INTO T_APPLICATION(APPID, TEECODE, OBJCODE, AUTHCODE, APPSTATUS, TIME)
+VALUES ('202012200002', '2017010001', '2017010003', '2007030001', '待处理', TO_DATE('20201220', 'YYYYMMDD'));
+
+INSERT INTO T_APPLICATION(APPID, TEECODE, OBJCODE, AUTHCODE, APPSTATUS, TIME)
+VALUES ('202012200003', '2017010001', '2017010004', '2007030001', '待处理', TO_DATE('20201220', 'YYYYMMDD'));
+
+SELECT * FROM T_APPLICATION;
+
+/*事件表*/
+/*
+INSERT INTO T_EVENT(EVENTNO, EVENT_TYPE, OBJCODE, APPID, EVTAID, EDATE)
+VALUES(SEQ_EVENT.NEXTVAL, 0, '2007030001', null, '20200011', TO_DATE('20201231', 'YYYYMMDD'));
+*/
+--INSERT INTO T_EVENT(EVENTNO, EVENT_TYPE, OBJCODE, APPID, EVTAID, EDATE)  VALUES(SEQ_EVENT.NEXTVAL,    0,        '2017010003',   '', '20200011',  TO_DATE('20201231', 'YYYYMMDD'));
+commit;
+
+select * from t_event;
+
+
