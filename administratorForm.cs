@@ -82,10 +82,10 @@ namespace FileReservationSystem
         }
 
         //查询预约记录：暂时只能根据被借阅人档案号查询
+        //弹出新窗口查询
         private void button_query_Click(object sender, EventArgs e)
         {
-
-
+            new queryForm().ShowDialog();
         }
 
         private void button_return_Click(object sender, EventArgs e)

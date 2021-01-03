@@ -15,6 +15,8 @@ namespace FileReservationSystem
         //用于提示
         public const string PLEASE_INPUT_USERNAME = "请输入用户名";
         public const string PLEASE_INPUT_PASSWORD = "请输入密码";
+        public const string PLEASE_INPUT_NAME = "请输入被借阅人姓名";
+        public const string PLEASE_INPUT_CODE = "请输入被借阅人档案号";
 
         //预约表的5中状态
         public const string PENDING = "待处理";
@@ -127,6 +129,19 @@ namespace FileReservationSystem
 
         //根据档案号查询档案是否在架
         public const string SELECT_STATUS = "SELECT STATUS FROM T_DOCUMENT WHERE DOCUMENT_CODE = '{0}'";
+
+        //在事件表中档案借阅记录，根据档案号和姓名
+        public const string SELECT_EVENT = "SELECT DOC1.STU_NAME || '(' || DOC1.DOCUMENT_CODE || ')'  申请人," +
+                                           " DOC2.STU_NAME || '(' || DOC2.DOCUMENT_CODE || ')'  被借阅人," +
+                                           " DOC3.STU_NAME || '(' || DOC3.DOCUMENT_CODE || ')'  院系管理员," +
+                                           " E.EDATE 时间" +
+                                           " FROM T_EVENT E,T_APPLICATION A, T_DOCUMENT DOC1, T_DOCUMENT DOC2, T_DOCUMENT DOC3" +
+                                           " WHERE E.APPID = A.APPID" +
+                                           " AND   A.TEECODE = DOC1.DOCUMENT_CODE" +
+                                           " AND   A.OBJCODE = DOC2.DOCUMENT_CODE" +
+                                           " AND   A.AUTHCODE = DOC3.DOCUMENT_CODE" +
+                                           " AND  DOC2.STU_NAME LIKE '{0}'" +
+                                           " AND DOC2.DOCUMENT_CODE LIKE '{1}'";
 
     }
 }
