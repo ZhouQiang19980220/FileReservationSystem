@@ -84,7 +84,7 @@ namespace FileReservationSystem
             // 
             this.button_query.Location = new System.Drawing.Point(569, 28);
             this.button_query.Name = "button_query";
-            this.button_query.Size = new System.Drawing.Size(75, 23);
+            this.button_query.Size = new System.Drawing.Size(75, 33);
             this.button_query.TabIndex = 7;
             this.button_query.Text = "查询";
             this.button_query.UseVisualStyleBackColor = true;
