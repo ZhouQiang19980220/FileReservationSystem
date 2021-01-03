@@ -81,8 +81,10 @@ namespace FileReservationSystem
             }
         }
 
+        //查询预约记录：暂时只能根据被借阅人档案号查询
         private void button_query_Click(object sender, EventArgs e)
         {
+
 
         }
 
@@ -90,6 +92,11 @@ namespace FileReservationSystem
         {
             ReturnDocForm rdf = new ReturnDocForm();
             rdf.ShowDialog();
+        }
+
+        private void button_refresh_Click(object sender, EventArgs e)
+        {
+            loadData();
         }
     }
 }

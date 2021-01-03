@@ -93,5 +93,10 @@ namespace FileReservationSystem
             authorizeForm af = new authorizeForm();
             af.ShowDialog();
         }
+
+        private void button_refresh_Click(object sender, EventArgs e)
+        {
+            loadDATA();
+        }
     }
 }
