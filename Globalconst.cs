@@ -146,5 +146,8 @@ namespace FileReservationSystem
                                            " AND  DOC2.STU_NAME LIKE '{0}'" +
                                            " AND DOC2.DOCUMENT_CODE LIKE '{1}'";
 
+
+        //查询预约状态
+        public const string SELECT_APPSTATUS = "select appstatus from t_application where appid = {0}";
     }
 }

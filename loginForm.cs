@@ -33,6 +33,8 @@ namespace FileReservationSystem
             //设置提示
             Win32Utility.SetCueText(textBox_user, Globalconst.PLEASE_INPUT_USERNAME);
             Win32Utility.SetCueText(textBox_password, Globalconst.PLEASE_INPUT_PASSWORD);
+            //换肤
+            skinEngine1.SkinFile = Application.StartupPath + @"/Skins/page.ssk";
         }
 
         //登陆按钮

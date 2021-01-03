@@ -68,7 +68,18 @@ namespace FileReservationSystem
                 }
                 int selectedRowIndex = dataGridView_application.CurrentRow.Index;
                 string appId = dataGridView_application.Rows[selectedRowIndex].Cells[0].Value.ToString();
-                string sqlStr = string.Format(Globalconst.DELETE_APPLICATION, appId);
+
+                string sqlStr = string.Format(Globalconst.SELECT_APPSTATUS, appId);
+                DataSet ds = CADOConn.GetDataSet(sqlStr);
+                string status = ds.Tables[0].Rows[0][0].ToString();
+                if (status.Equals(Globalconst.SUCCESS))
+                {
+                    MessageBox.Show("档案已借出，该条预约记录无法删除！");
+                    return;
+                }
+
+
+                sqlStr = string.Format(Globalconst.DELETE_APPLICATION, appId);
                 CADOConn.ExecuteSQL(sqlStr);
                 loadDATA();
             }
