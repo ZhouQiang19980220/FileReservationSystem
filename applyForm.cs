@@ -60,6 +60,16 @@ namespace FileReservationSystem
                 return;
             }
 
+            //如果当前档案不在架，则无法借阅
+            sql = string.Format(Globalconst.SELECT_STATUS, objCode);
+            ds = CADOConn.GetDataSet(sql);
+            string status = ds.Tables[0].Rows[0][0].ToString();
+            if(string.Equals(status, "1"))
+            {
+                MessageBox.Show("该档案不在架，暂时无法借阅！");
+                return;
+            }
+
             //获取预约日期
             string data = dateTimePicker_application.Value.ToString("yyyy-MM-dd");
 

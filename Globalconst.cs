@@ -125,7 +125,8 @@ namespace FileReservationSystem
         public const string INSERT_EVENT = "INSERT INTO T_EVENT(EVENTNO, EVENT_TYPE, OBJCODE, APPID, EVTAID, EDATE)  " +
                                            "VALUES(SEQ_EVENT.NEXTVAL,    {0},        '{1}',   '{2}', '{3}',  TO_DATE('{4}', 'YYYYMMDD'))";
 
-        //在时间
+        //根据档案号查询档案是否在架
+        public const string SELECT_STATUS = "SELECT STATUS FROM T_DOCUMENT WHERE DOCUMENT_CODE = '{0}'";
 
     }
 }
