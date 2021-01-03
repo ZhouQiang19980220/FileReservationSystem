@@ -37,6 +37,8 @@ namespace FileReservationSystem
             this.button_exit = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.button_refresh = new System.Windows.Forms.Button();
+            this.label_userName = new System.Windows.Forms.Label();
+            this.label_data = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_application)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -47,7 +49,7 @@ namespace FileReservationSystem
             this.label_application.Font = new System.Drawing.Font("宋体", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label_application.Location = new System.Drawing.Point(33, 26);
             this.label_application.Name = "label_application";
-            this.label_application.Size = new System.Drawing.Size(226, 50);
+            this.label_application.Size = new System.Drawing.Size(181, 40);
             this.label_application.TabIndex = 0;
             this.label_application.Text = "我的预约";
             // 
@@ -153,11 +155,34 @@ namespace FileReservationSystem
             this.button_refresh.UseVisualStyleBackColor = true;
             this.button_refresh.Click += new System.EventHandler(this.button_refresh_Click);
             // 
+            // label_userName
+            // 
+            this.label_userName.AutoSize = true;
+            this.label_userName.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label_userName.Location = new System.Drawing.Point(686, 42);
+            this.label_userName.Name = "label_userName";
+            this.label_userName.Size = new System.Drawing.Size(178, 21);
+            this.label_userName.TabIndex = 7;
+            this.label_userName.Text = "客户端姓名：周强";
+            this.label_userName.Click += new System.EventHandler(this.label_userName_Click);
+            // 
+            // label_data
+            // 
+            this.label_data.AutoSize = true;
+            this.label_data.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label_data.Location = new System.Drawing.Point(367, 42);
+            this.label_data.Name = "label_data";
+            this.label_data.Size = new System.Drawing.Size(52, 21);
+            this.label_data.TabIndex = 8;
+            this.label_data.Text = "时间";
+            // 
             // userForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(935, 382);
+            this.Controls.Add(this.label_data);
+            this.Controls.Add(this.label_userName);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.dataGridView_application);
             this.Controls.Add(this.label_application);
@@ -183,5 +208,7 @@ namespace FileReservationSystem
         private System.Windows.Forms.Button button_exit;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Button button_refresh;
+        private System.Windows.Forms.Label label_userName;
+        private System.Windows.Forms.Label label_data;
     }
 }

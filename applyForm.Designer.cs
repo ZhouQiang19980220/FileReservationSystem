@@ -44,65 +44,62 @@ namespace FileReservationSystem
             // label_applicant
             // 
             this.label_applicant.AutoSize = true;
-            this.label_applicant.Location = new System.Drawing.Point(58, 59);
-            this.label_applicant.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label_applicant.Location = new System.Drawing.Point(77, 74);
             this.label_applicant.Name = "label_applicant";
-            this.label_applicant.Size = new System.Drawing.Size(89, 12);
+            this.label_applicant.Size = new System.Drawing.Size(112, 15);
             this.label_applicant.TabIndex = 0;
             this.label_applicant.Text = "申请人档案编号";
             // 
             // label_date
             // 
             this.label_date.AutoSize = true;
-            this.label_date.Location = new System.Drawing.Point(69, 150);
-            this.label_date.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label_date.Location = new System.Drawing.Point(92, 188);
             this.label_date.Name = "label_date";
-            this.label_date.Size = new System.Drawing.Size(77, 12);
+            this.label_date.Size = new System.Drawing.Size(97, 15);
             this.label_date.TabIndex = 1;
             this.label_date.Text = "预计借出时间";
             // 
             // label_object
             // 
             this.label_object.AutoSize = true;
-            this.label_object.Location = new System.Drawing.Point(58, 116);
-            this.label_object.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label_object.Location = new System.Drawing.Point(77, 145);
             this.label_object.Name = "label_object";
-            this.label_object.Size = new System.Drawing.Size(89, 12);
+            this.label_object.Size = new System.Drawing.Size(112, 15);
             this.label_object.TabIndex = 2;
             this.label_object.Text = "被借阅档案编号";
             // 
             // textBox_applicant
             // 
             this.textBox_applicant.Enabled = false;
-            this.textBox_applicant.Location = new System.Drawing.Point(165, 57);
-            this.textBox_applicant.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox_applicant.Location = new System.Drawing.Point(220, 71);
+            this.textBox_applicant.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox_applicant.Name = "textBox_applicant";
-            this.textBox_applicant.Size = new System.Drawing.Size(151, 21);
+            this.textBox_applicant.Size = new System.Drawing.Size(200, 25);
             this.textBox_applicant.TabIndex = 3;
             // 
             // textBox_object
             // 
-            this.textBox_object.Location = new System.Drawing.Point(165, 114);
-            this.textBox_object.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox_object.Location = new System.Drawing.Point(220, 142);
+            this.textBox_object.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox_object.Name = "textBox_object";
-            this.textBox_object.Size = new System.Drawing.Size(151, 21);
+            this.textBox_object.Size = new System.Drawing.Size(200, 25);
             this.textBox_object.TabIndex = 4;
             // 
             // dateTimePicker_application
             // 
-            this.dateTimePicker_application.Location = new System.Drawing.Point(165, 144);
-            this.dateTimePicker_application.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker_application.Location = new System.Drawing.Point(220, 180);
+            this.dateTimePicker_application.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTimePicker_application.MinDate = new System.DateTime(2020, 12, 31, 0, 0, 0, 0);
             this.dateTimePicker_application.Name = "dateTimePicker_application";
-            this.dateTimePicker_application.Size = new System.Drawing.Size(151, 21);
+            this.dateTimePicker_application.Size = new System.Drawing.Size(200, 25);
             this.dateTimePicker_application.TabIndex = 5;
             // 
             // button_OK
             // 
-            this.button_OK.Location = new System.Drawing.Point(107, 178);
-            this.button_OK.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button_OK.Location = new System.Drawing.Point(143, 222);
+            this.button_OK.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button_OK.Name = "button_OK";
-            this.button_OK.Size = new System.Drawing.Size(56, 26);
+            this.button_OK.Size = new System.Drawing.Size(75, 32);
             this.button_OK.TabIndex = 6;
             this.button_OK.Text = "确定";
             this.button_OK.UseVisualStyleBackColor = true;
@@ -110,10 +107,10 @@ namespace FileReservationSystem
             // 
             // button_cansel
             // 
-            this.button_cansel.Location = new System.Drawing.Point(238, 178);
-            this.button_cansel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button_cansel.Location = new System.Drawing.Point(317, 222);
+            this.button_cansel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button_cansel.Name = "button_cansel";
-            this.button_cansel.Size = new System.Drawing.Size(56, 26);
+            this.button_cansel.Size = new System.Drawing.Size(75, 32);
             this.button_cansel.TabIndex = 7;
             this.button_cansel.Text = "取消";
             this.button_cansel.UseVisualStyleBackColor = true;
@@ -122,26 +119,25 @@ namespace FileReservationSystem
             // label_objName
             // 
             this.label_objName.AutoSize = true;
-            this.label_objName.Location = new System.Drawing.Point(58, 90);
-            this.label_objName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label_objName.Location = new System.Drawing.Point(77, 112);
             this.label_objName.Name = "label_objName";
-            this.label_objName.Size = new System.Drawing.Size(77, 12);
+            this.label_objName.Size = new System.Drawing.Size(97, 15);
             this.label_objName.TabIndex = 8;
             this.label_objName.Text = "被借阅人姓名";
             // 
             // textBox_objname
             // 
-            this.textBox_objname.Location = new System.Drawing.Point(165, 87);
-            this.textBox_objname.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox_objname.Location = new System.Drawing.Point(220, 109);
+            this.textBox_objname.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox_objname.Name = "textBox_objname";
-            this.textBox_objname.Size = new System.Drawing.Size(151, 21);
+            this.textBox_objname.Size = new System.Drawing.Size(200, 25);
             this.textBox_objname.TabIndex = 9;
             // 
             // applyForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(418, 240);
+            this.ClientSize = new System.Drawing.Size(557, 300);
             this.Controls.Add(this.textBox_objname);
             this.Controls.Add(this.label_objName);
             this.Controls.Add(this.button_cansel);
@@ -152,10 +148,11 @@ namespace FileReservationSystem
             this.Controls.Add(this.label_object);
             this.Controls.Add(this.label_date);
             this.Controls.Add(this.label_applicant);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ForeColor = System.Drawing.Color.Cornsilk;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "applyForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "applyForm";
+            this.Text = "新增预约";
             this.Load += new System.EventHandler(this.applyForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

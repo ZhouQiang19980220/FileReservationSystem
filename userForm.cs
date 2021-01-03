@@ -30,6 +30,14 @@ namespace FileReservationSystem
                 button_lookAuthorizeApp.Visible = false;
             }
             loadDATA();
+
+            //显示当前用户的院系和时间
+            label_data.Text = DateTime.Now.Date.ToLongDateString();
+
+            //显示当前用户名
+            string sqlStr = string.Format(Globalconst.SELECT_NAME, Program.curUser.IdCode);
+            DataSet ds = CADOConn.GetDataSet(sqlStr);
+            label_userName.Text = "客户端姓名：" + ds.Tables[0].Rows[0][0].ToString();
         }
 
         //将用户预约表加载到主窗口中
@@ -97,6 +105,11 @@ namespace FileReservationSystem
         private void button_refresh_Click(object sender, EventArgs e)
         {
             loadDATA();
+        }
+
+        private void label_userName_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

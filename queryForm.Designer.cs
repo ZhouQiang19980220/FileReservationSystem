@@ -103,7 +103,7 @@ namespace FileReservationSystem
             this.Controls.Add(this.label_name);
             this.Name = "queryForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "queryForm";
+            this.Text = "查询界面";
             this.Load += new System.EventHandler(this.queryForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_queryResult)).EndInit();
             this.ResumeLayout(false);

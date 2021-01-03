@@ -37,6 +37,9 @@ namespace FileReservationSystem
         //SQL查询语句
         //查询用户表
         public const string SELECT_USER = "select * from t_user where userId = '{0}'";
+
+        //查询姓名
+        public const string SELECT_NAME = "select stu_name from t_document where document_code = '{0}'";
         //查询我的预约
         public const string SELECT_APPLICATION = "select app.APPID 预约号," +
                                                  " doc1.stu_name || '(' || app.teecode || ')'   申请人, " +
